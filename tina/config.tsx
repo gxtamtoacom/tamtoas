@@ -1,10 +1,9 @@
 import { defineConfig } from "tinacms";
 
 export default defineConfig({
-  // KHÔNG DÙNG TINA CLOUD → DÙNG SELF-HOSTED
-  branch: process.env.VERCEL_GIT_COMMIT_REF || "main",
-  clientId: undefined, // bỏ trống
-  token: undefined,    // bỏ trống
+  branch: process.env.HEAD || "main",
+  clientId: null,     // BỎ HOÀN TOÀN
+  token: null,        // BỎ HOÀN TOÀN
 
   build: {
     outputFolder: "admin",
@@ -20,35 +19,22 @@ export default defineConfig({
     collections: [
       {
         name: "post",
-        label: "Bài viết",
+        label: "Posts",
         path: "content/posts",
         format: "mdx",
-        ui: {
-          router: ({ document }) => `/bai-viet/${document._sys.filename}`,
-        },
         fields: [
           {
             type: "string",
             name: "title",
-            label: "Tiêu đề",
+            label: "Title",
             isTitle: true,
             required: true,
           },
           {
             type: "rich-text",
             name: "body",
-            label: "Nội dung",
+            label: "Body",
             isBody: true,
-          },
-          {
-            type: "image",
-            name: "coverImage",
-            label: "Ảnh bìa",
-          },
-          {
-            type: "datetime",
-            name: "date",
-            label: "Ngày đăng",
           },
         ],
       },
