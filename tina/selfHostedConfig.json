@@ -1,0 +1,7 @@
+{
+  "tina": {
+    "publicFolder": "public",
+    "outputFolder": "admin",
+    "schema": "tina/schema.ts"
+  }
+}
