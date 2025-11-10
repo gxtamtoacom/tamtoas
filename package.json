@@ -51,5 +51,10 @@
     "tinacms": "^2.8.2",
     "tw-animate-css": "^1.3.7",
     "usehooks-ts": "^3.1.1"
-  }
+  },
+  "scripts": {
+  "dev": "tinacms dev -c \"next dev\"",
+  "build": "tinacms build && next build",
+  "start": "next start"
+}
 }
